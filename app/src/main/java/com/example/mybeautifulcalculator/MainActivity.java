@@ -65,13 +65,13 @@ public class MainActivity extends AppCompatActivity {
         return textView.getText().toString();
     }
 
-    private void updateProblem(String s){
+    private void updateProblem(String s) {
         stringBuilder.append(s);
         textViewProblem.setText(stringBuilder.toString());
     }
 
-    private void setOnClickListeners(){
-        for (int i=0; i<tvNumbers.size(); i++) {
+    private void setOnClickListeners() {
+        for (int i = 0; i < tvNumbers.size(); i++) {
             final int f = i;
             tvNumbers.get(i).setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         tvPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!isChar){
+                if (!isChar) {
                     updateProblem(getString(tvPlus));
                     isChar = true;
                 }
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         tvMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!isChar){
+                if (!isChar) {
                     updateProblem(getString(tvMinus));
                     isChar = true;
                 }
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
         tvDivision.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!isChar){
+                if (!isChar) {
                     updateProblem(getString(tvDivision));
                     isChar = true;
                 }
@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
         tvPoint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!isChar){
+                if (!isChar) {
                     updateProblem(getString(tvPoint));
                     isChar = true;
                 }
@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
         tvEquals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (stringBuilder.length()!=0) {
+                if (stringBuilder.length() != 0) {
                     viewModel.solveTheProblem(stringBuilder.toString());
                     viewModel.getResult().observe(MainActivity.this, new Observer<Double>() {
                         @Override
@@ -176,16 +176,39 @@ public class MainActivity extends AppCompatActivity {
         tvErase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (stringBuilder.length()>0){
-                    textViewProblem.setText(stringBuilder.deleteCharAt(stringBuilder.length()-1));
+                if (stringBuilder.length() > 0) {
+                    textViewProblem.setText(stringBuilder.deleteCharAt(stringBuilder.length() - 1));
                     textViewResult.setText("");
                     isChar = false;
                 }
             }
         });
+
+        tvNot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                for (int i = stringBuilder.length() - 1; i >= 0; i--) {
+                    if (stringBuilder.charAt(i) == '+' || stringBuilder.charAt(i) == '-') {
+                        stringBuilder.insert(i + 1, "(-");
+                        break;
+                    }
+                    else if (i == 0) {
+                        stringBuilder.insert(0, "(-");
+                    }
+                }
+                textViewProblem.setText(stringBuilder.toString());
+            }
+        });
+
+        tvSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Данная функция пока недоступна", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
-    private void initViews(){
+    private void initViews() {
         textViewResult = findViewById(R.id.textViewResult);
         textViewProblem = findViewById(R.id.textViewProblem);
 
