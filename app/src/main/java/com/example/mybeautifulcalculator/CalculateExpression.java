@@ -3,7 +3,12 @@ package com.example.mybeautifulcalculator;
 import java.util.Stack;
 
 public class CalculateExpression {
-    public static String expressionToRPN(String expression) { //RPN - Reverse polish notation
+
+    public static double getResult(String s) {
+        String rpn = expressionToRPN(addingNulls(s));
+        return RPNtoResult(rpn);
+    }
+    private static String expressionToRPN(String expression) { //RPN - Reverse polish notation
         StringBuilder current = new StringBuilder();
         Stack<Character> stack = new Stack<>();
 
@@ -42,7 +47,25 @@ public class CalculateExpression {
         return current.toString();
     }
 
-    public static double RPNtoResult(String rpn) {
+    private static String addingNulls(String expr){
+        StringBuilder preparedExpression = new StringBuilder();
+
+        for (int i=0; i<expr.length(); i++) {
+            char temp = expr.charAt(i);
+            if (temp=='-') {
+                if (i==0) {
+                    preparedExpression.append('0');
+                } else if (expr.charAt(i-1) == '(') {
+                    preparedExpression.append('0');
+                }
+            }
+            preparedExpression.append(temp);
+        }
+
+        return preparedExpression.toString();
+    }
+
+    private static double RPNtoResult(String rpn) {
         StringBuilder operand = new StringBuilder();
 
         Stack <Double> stack = new Stack<>();

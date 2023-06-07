@@ -46,7 +46,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvEnd;
     private TextView tvSettings;
     private static StringBuilder stringBuilder = new StringBuilder();
-    private static Boolean isChar = true;
+    private static boolean isChar = true;
+
 
     private ViewModel viewModel;
 
@@ -145,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 updateProblem(getString(tvStart));
+                isChar = false;
             }
         });
 

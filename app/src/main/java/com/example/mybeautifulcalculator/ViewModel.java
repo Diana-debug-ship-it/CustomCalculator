@@ -18,13 +18,8 @@ public class ViewModel extends AndroidViewModel {
         return result;
     }
 
-    private String retrieveProblem(String problem) {
-        return CalculateExpression.expressionToRPN(problem);
-    }
-
     public void solveTheProblem(String problem) {
-        String rpn = retrieveProblem(problem);
-        double res = CalculateExpression.RPNtoResult(rpn);
+        double res = CalculateExpression.getResult(problem);
         result.setValue(res);
     }
 }
