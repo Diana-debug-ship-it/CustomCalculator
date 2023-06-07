@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/layoutTop"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/light_pink"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="1">
+
+        <TextView
+            android:id="@+id/textViewProblem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:fontFamily="casual"
+            android:paddingEnd="20dp"
+            android:background="@color/light_pink"
+            android:textAlignment="textEnd"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            tools:text="1/(8)=" />
+
+        <TextView
+            android:id="@+id/textViewResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:paddingEnd="20dp"
+            android:textAlignment="textEnd"
+            android:textColor="@color/white"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            tools:text="0.125" />
+
+    </LinearLayout>
+
+    <GridLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:columnCount="4"
+        android:paddingTop="5dp"
+        android:paddingBottom="10dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:rowCount="6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutTop">
+
+        <TextView
+            android:id="@+id/tvEraseAll"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/el_bg"
+            android:fontFamily="casual"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="C"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvNot"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/el_bg"
+            android:fontFamily="casual"
+            android:text="+/-"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvErase"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/el_bg"
+            android:fontFamily="casual"
+            android:paddingStart="18dp"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:drawableLeftCompat="@drawable/ic_backspace" />
+
+        <TextView
+            android:id="@+id/tvDivision"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/el_bg"
+            android:fontFamily="casual"
+            android:paddingStart="25dp"
+            android:text="/"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv7"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/el_bg"
+            android:fontFamily="casual"
+            android:paddingStart="22dp"
+            android:text="7"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv8"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/el_bg"
+            android:fontFamily="casual"
+            android:paddingStart="20dp"
+            android:text="8"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv9"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/el_bg"
+            android:fontFamily="casual"
+            android:paddingStart="20dp"
+            android:text="9"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvMultiplication"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/el_bg"
+            android:fontFamily="casual"
+            android:paddingStart="22dp"
+            android:text="x"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/el_bg"
+            android:fontFamily="casual"
+            android:paddingStart="22dp"
+            android:text="4"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv5"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/el_bg"
+            android:fontFamily="casual"
+            android:paddingStart="22dp"
+            android:text="5"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv6"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/el_bg"
+            android:fontFamily="casual"
+            android:paddingStart="22dp"
+            android:text="6"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvMinus"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/el_bg"
+            android:fontFamily="casual"
+            android:paddingStart="22dp"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/el_bg"
+            android:fontFamily="casual"
+            android:paddingStart="22dp"
+            android:text="3"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/el_bg"
+            android:fontFamily="casual"
+            android:paddingStart="22dp"
+            android:text="2"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/el_bg"
+            android:fontFamily="casual"
+            android:paddingStart="22dp"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvPlus"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/el_bg"
+            android:fontFamily="casual"
+            android:paddingStart="22dp"
+            android:text="+"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv0"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/el_bg"
+            android:fontFamily="casual"
+            android:paddingStart="22dp"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvPoint"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/el_bg"
+            android:fontFamily="casual"
+            android:paddingStart="27dp"
+            android:text="."
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvEquals"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/el_bg"
+            android:fontFamily="casual"
+            android:paddingStart="22dp"
+            android:text="="
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvChangeInstruments"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/el_bg"
+            android:drawableStart="@drawable/ic_settings"
+            android:fontFamily="casual"
+            android:paddingStart="18dp"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvStart"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/el_bg"
+            android:text="("
+            android:fontFamily="casual"
+            android:paddingStart="25dp"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvEnd"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/el_bg"
+            android:text=")"
+            android:fontFamily="casual"
+            android:paddingStart="25dp"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+    </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
